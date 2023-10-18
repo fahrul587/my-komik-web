@@ -1,4 +1,3 @@
-import { Container } from "./List.style";
 const Cards = ({ allSeries }) => {
   return (
     <div
@@ -24,7 +23,7 @@ const Cards = ({ allSeries }) => {
             <p className="truncate text-white font-medium">{allSeries.type}</p>
           </div>
         </div>
-        <div className="p-1 py-0.5 text-sm h-[50px]">
+        <div className="p-1 py-0.5 text-sm h-[50px] shrink-0">
           <p className="line-clamp-2 group-hover:text-blue-400 duration-300 dark:text-white text-black font-sans">{allSeries.title}</p>
         </div>
       </div>
