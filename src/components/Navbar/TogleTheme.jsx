@@ -1,17 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { BsFillMoonFill, BsFillSunFill } from "react-icons/bs";
 
-const TogleTheme = ({className}) => {
+const TogleTheme = (props) => {
   const [theme, setChange] = useState(sessionStorage.getItem("theme"));
+
   useEffect(() => {
-    if (theme) {
-      document.documentElement.classList.add("dark")
-      sessionStorage.setItem("theme", true)
+    if (theme === true || theme === "true") {
+      document.documentElement.classList.add("dark");
+      sessionStorage.setItem("theme", true);
+      setChange(true)
+    } else if (theme === false || theme === "false") {
+      document.documentElement.classList.remove("dark");
+      sessionStorage.setItem("theme", false);
+      setChange(false)
     } else {
-      document.documentElement.classList.remove("dark")
-      sessionStorage.clear()
+      setChange(window.matchMedia("(prefers-color-scheme: dark)").matches);
     }
-    
   }, [theme]);
 
   return (
@@ -19,9 +23,11 @@ const TogleTheme = ({className}) => {
       <label className="flex items-center relative w-max cursor-pointer select-none">
         <input
           type="checkbox"
-          checked={theme == null ? false : theme ? true : false}
+          checked={theme ? true : false}
           onChange={() => setChange(!theme)}
-          onKeyUp={(e) => {if (e.key === "Enter") setChange(!theme)}}
+          onKeyUp={(e) => {
+            if (e.key === "Enter") setChange(!theme);
+          }}
           className="peer bg-white appearance-none cursor-pointer w-10 h-5 rounded-full"
         />
         <span className="absolute left-1">
