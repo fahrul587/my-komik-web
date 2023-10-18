@@ -2,7 +2,7 @@ const Cards = ({ allSeries }) => {
   return (
     <div
       id="card"
-      className="w-full h-full group rounded-xl overflow-hidden shadow-md"
+      className="w-full h-full group bg-slate-100 dark:bg-[#3b4248] rounded-xl overflow-hidden shadow-md"
     >
       <div className="flex flex-col w-full h-full">
         <div id="poster" className="bg-blue-300 h-full relative overflow-hidden">
