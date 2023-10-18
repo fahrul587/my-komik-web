@@ -11,7 +11,7 @@ const List = ({chapter}) => {
         <Link
           key={i}
           to={c.endpoint}
-          className="group bg-slate-100 dark:bg-slate-600 dark:text-slate-50 dark:hover:bg-blue-400 hover:bg-blue-400 duration-200 inline-block p-1 px-3 h-fit"
+          className="group visited:dark:bg-gray-700 visited:bg-gray-200 bg-slate-100 dark:bg-slate-600 dark:text-slate-50 dark:hover:bg-blue-400 hover:bg-blue-400 duration-200 inline-block p-1 px-3 h-fit"
         >
           <p className="truncate group-hover:text-slate-50 text-sm">{c.name}</p>
           <p className="truncate text-[11px] text-slate-400 group-hover:text-slate-50">
