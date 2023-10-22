@@ -7,6 +7,7 @@ const Cards = ({ allSeries }) => {
       <div className="flex flex-col w-full h-full">
         <div id="poster" className="bg-blue-300 h-full relative overflow-hidden">
           <img
+            loading="lazy"
             src={allSeries.poster}
             className="w-full h-full brightness-90 group-hover:scale-125 group-hover:brightness-100 duration-300"
             alt={allSeries.title}
