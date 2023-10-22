@@ -14,18 +14,18 @@ const ReadingIndex = () => {
   const { endpoint, ch } = useParams();
 
   const [error, setError] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const toTop = useRef(document.documentElement);
 
   useEffect(() => {
     document.title = ch
+    setIsLoading(true)
+    scroll(toTop)
+    setError(false)
     getChapter(endpoint, ch)
-      .then(setIsLoading(true))
-      .then(scroll(toTop))
       .then((response) => {
         setIsLoading(false);
         setChapter(response);
-        setError(false);
       })
       .catch((err) => {
         console.log(err);

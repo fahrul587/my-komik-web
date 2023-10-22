@@ -12,18 +12,18 @@ const Details = () => {
   const { endpoint } = useParams();
   const [details, setDetails] = useState([]);
   const [error, setError] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const toTop = useRef(document.documentElement);
 
   useEffect(() => {
     document.title = endpoint;
+    setIsLoading(true)
+    setError(false)
+    scroll(toTop)
     getDetails(endpoint)
-      .then(setIsLoading(true))
-      .then(scroll(toTop))
       .then((response) => {
         setIsLoading(false);
         setDetails(response.data.newDetail[0]);
-        setError(false);
       })
       .catch((err) => {
         err ? setError(true) : null;
