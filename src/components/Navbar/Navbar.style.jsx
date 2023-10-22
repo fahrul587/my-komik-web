@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { List } from "./Nav.List";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { AiOutlineClose } from "react-icons/ai";
@@ -29,11 +29,11 @@ export const Title = ({ children, href, setOpen }) => {
   }, []);
   return (
     <div className="grow w-full sm:w-auto flex justify-between items-center">
-      <a href={href}>
+      <Link to={href}>
         <div className="text-white font-black font-mono text-lg">
           {children}
         </div>
-      </a>
+      </Link>
 
       <button className="block sm:hidden" onClick={() => setMenu(!menu)}>
         {!menu ? (
