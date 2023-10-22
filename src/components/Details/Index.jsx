@@ -35,14 +35,13 @@ const Details = () => {
     <Container className={"my-5"}>
       <div className="w-full flex gap-2 flex-wrap md:flex-nowrap items-start">
         <div className="grow flex flex-wrap gap-3">
-          <DetailsHeaderLoading />
-          {/* {isLoading ? (
+          {isLoading ? (
             <DetailsHeaderLoading />
           ) : error ? (
             <DataNotFound />
           ) : (
             details.length !== 0 && <DetailsWrapper details={details} />
-          )} */}
+          )}
         </div>
         <div className="flex-none shrink-0 w-full md:w-[300px] xl:w-[400px]">
           <Container.Header>Populer</Container.Header>
