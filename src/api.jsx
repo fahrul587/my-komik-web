@@ -19,7 +19,7 @@ export const getPopuler = async() => {
 }
 
 export const search = async(page, query) => {
-    const response = await axios.get(`${apiUrl}/api/s/${page}/${query}`)
+    const response = await axios.get(`${apiUrl}/api/s/${query}/${page}`)
     return response
 }
 
